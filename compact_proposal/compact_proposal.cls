@@ -31,7 +31,13 @@
 		family=cp,
 		prefix=cp@,
 		}
+
+% math packages
 \RequirePackage{lineno}
+\RequirePackage{amsmath}
+\RequirePackage{amsthm}
+\RequirePackage{amssymb}
+\RequirePackage{pifont}
 
 \newtoggle{@draft}
 \newtoggle{@nonotes}
@@ -263,6 +269,15 @@
 	{0.1\baselineskip}%
 	{\fontseries{b}\fontshape{it}\selectfont\raggedright}%
 }
+
+% custom functions to simplify math
+\renewcommand{\L}{\mathcal{L}}
+\renewcommand{\H}{\mathcal{H}}
+\newcommand{\ddx}[2]{\frac{\mathrm{d} #1}{\mathrm{d} #2}}
+\newcommand{\pdx}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\dx}[1]{\mathrm{d} #1 }
+\newcommand{\px}[1]{\partial #1 }
+\renewcommand{\bar}{\overline}
 
 \newenvironment{tightitemize}{%
 	\begin{itemize}[noitemsep,nolistsep]
